@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 
-export default function loadingScreen() {
+export default function LoadingPage() {
     return (
       <div className="relative h-screen overflow-hidden">
         

@@ -16,12 +16,11 @@ export default function test() {
       }, [theme]);
 
     return (
-      <div>
         <div className="drawer">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col">
+            <div className="drawer-content bg-base-200 flex flex-col">
                 {/* Navbar */}
-                <div className="navbar bg-base-300 w-full">
+                <div className="navbar bg-primary w-full">
                     <div className="flex-none lg:hidden">
                         <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
                         <svg
@@ -37,7 +36,7 @@ export default function test() {
                         </svg>
                         </label>
                     </div>
-                    <div className="mx-2 flex-1 px-2">Tukums-2</div>
+                    <div className="mx-2 flex-1 px-2 text-neutral">Tukums-2</div>
                     <div className="hidden flex-none lg:block">
                         <ul className="menu menu-horizontal">
                         {/* Navbar menu content here */}
@@ -70,18 +69,20 @@ export default function test() {
                         </svg>
                     </label>
                 </div>
+                <hr className="border-1 border-accent"/>
             </div>
 
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu bg-base-200 min-h-full w-80 p-4">
+                <ul className="menu bg-accent min-h-full w-80 p-4 gap-1">
                 {/* Sidebar content here */}
-                <li><a>Pasūtījumu saraksts</a></li>
-                <li><a>Iestatījumi</a></li>
-                <li><a>Statistika</a></li>
+                <li><a className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Pasūtījumu saraksts</a></li>
+                <li><a className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Iestatījumi</a></li>
+                <li><a className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Statistika</a></li>
                 </ul>
             </div>
+
+            <div></div>
         </div>
-      </div>
     )
 } 
