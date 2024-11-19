@@ -6,8 +6,8 @@ export default function LoadingPage() {
       <div className="relative h-screen overflow-hidden">
         
         <div className="absolute top-0 left-0 w-full h-full flex flex-col">
-          <div className="bg-primary h-[67%]"></div>
-          <div className="bg-secondary h-[8%]"></div>
+          <div className="bg-base-100 h-[67%]"></div>
+          <div className="bg-success h-[8%]"></div>
           <div className="bg-accent h-[25%]"></div>
         </div>
 

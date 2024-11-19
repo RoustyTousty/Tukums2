@@ -1,13 +1,14 @@
-import LoadingScreen from "@/components/LoadingPage";
-import OrderInputPage from "@/app/pages/OrderInputPage";
-import OrderViewPage from "@/app/pages/OrderViewPage";
-import NavBar from "@/components/NavBar";
+import LoadingScreen from "@/components/LoadingPage"
+import OrderInputPage from "./orderinput/page"
+import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="bg-base-300 h-full">
-      <NavBar/>
-      <OrderInputPage/>
+    <div className="bg-base-300 h-screen">
+      <Link href="/orders/1">order 1</Link>
+      <Link href="/orderinput">orderinput</Link>
+      <Link href="/orderlist">orderlist</Link>
+      <LoadingScreen />
     </div>
   );
 }
