@@ -1,13 +1,12 @@
 export interface Order {
-    id: number;
-    name: string;
-    surname: string;
-    phoneNumber: number;
-    time: number;
-
-    quantity: number;
-    purchaseType: string;
-    price: number;
-    paymentType: string;
-    location: string;
+    id: number | null;
+    name: string | null;
+    surname: string | null;
+    phoneNumber: number | null;
+    time: number | null;
+    quantity: number | null;
+    purchaseType: string | null;
+    price: number | null;
+    paymentType: string | null;
+    location: string | null;
 }

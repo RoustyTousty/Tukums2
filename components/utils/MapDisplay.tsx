@@ -1,9 +1,16 @@
-export default function MapDisplay() {
+import { Order } from "@/types";
+
+type Props = {
+    location: String | undefined;
+    onDataChange: (field: keyof Order, value: string | number) => void;
+};
+
+export default function mapDisplay({ location, onDataChange }: Props) {
     return (
         <div className="flex justify-center w-full">
             <label className="flex flex-col justify-center w-full">
                 <div className="label justify-center">
-                    <span className="label-text text-sm text-neutral font-bold">Tukums, 30 Bulvaris</span>
+                    <span className="label-text text-sm text-neutral font-bold">{location}</span>
                 </div>
 
                 <div className="relative w-full" style={{ paddingBottom: '20%' }}>

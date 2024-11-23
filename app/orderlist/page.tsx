@@ -1,4 +1,4 @@
-import OrderList from "@/components/pages/OrderList/OrderList"
+import OrderList from "@/components/OrderList/OrderList"
 import NavBar from "@/components/NavBar";
 
 export default function page() {

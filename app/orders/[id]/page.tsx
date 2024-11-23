@@ -1,9 +1,7 @@
-import OrderTicket from "@/components/pages/OrderView/OrderTicket";
-import OrderEdit from "@/components/pages/OrderView/OrderEdit";
+import OrderTicket from "@/components/OrderView/OrderTicket";
+import OrderEdit from "@/components/OrderView/OrderEdit";
 import { createClient } from "@supabase/supabase-js";
 import NavBar from "@/components/NavBar";
-import { Order } from "@/types";
-import { useEffect, useState } from "react";
 
 type Params = Promise<{ id: String }>;
 

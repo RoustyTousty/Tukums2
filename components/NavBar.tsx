@@ -1,8 +1,8 @@
 "use client"
 import React from "react"
-import Image from "next/image"
+import Link from "next/link"
 
-export default function test() {
+export default function navBar() {
     const [theme, setTheme] = React.useState('dark');
     const toggleTheme = () => {
       setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -40,7 +40,7 @@ export default function test() {
                     <div className="hidden flex-none lg:block">
                         <ul className="menu menu-horizontal">
                         {/* Navbar menu content here */}
-                        <li><a>Pasūtījumu saraksts</a></li>
+                        <li><Link href="/orderlist">Pasūtījumu saraksts</Link></li>
                         <li><a>Iestatījumi</a></li>
                         <li><a>Statistika</a></li>
                         </ul>
@@ -73,9 +73,9 @@ export default function test() {
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu bg-accent min-h-full w-80 p-4 gap-1">
                 {/* Sidebar content here */}
-                <li><a className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Pasūtījumu saraksts</a></li>
-                <li><a className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Iestatījumi</a></li>
-                <li><a className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Statistika</a></li>
+                <li><Link href="/orderlist" className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Pasūtījumu saraksts</Link></li>
+                <li><Link href="/settings" className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Iestatijumi</Link></li>
+                <li><Link href="/stats" className="hover:bg-base-200 text-base-200 hover:text-neutral font-bold">• Statistika</Link></li>
                 </ul>
             </div>
 
