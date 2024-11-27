@@ -7,6 +7,7 @@ type Props = {
 }
 
 export default function InputFields({ data, onDataChange }: Props) {
+  console.log("jolo")
   return (
     <div className="flex flex-col gap-3 p-[10%]">
       <div className="flex flex-row justify-between gap-5">
@@ -47,6 +48,19 @@ export default function InputFields({ data, onDataChange }: Props) {
           className="input bg-base-100 w-full"
           value={data.phoneNumber || ""}
           onChange={(e) => onDataChange("phoneNumber", Number(e.target.value))}
+        />
+      </label>
+
+      <label className="form-control w-full max-w">
+        <div className="label">
+          <span className="label-text text-neutral">Lokācīja:</span>
+        </div>
+        <input
+          type="text"
+          placeholder="-"
+          className="input bg-base-100 w-full"
+          value={data.location || ""}
+          onChange={(e) => onDataChange("location", e.target.value)}
         />
       </label>
 

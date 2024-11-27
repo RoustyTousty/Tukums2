@@ -50,7 +50,6 @@ export default function Page() {
 		<div className="bg-base-300 flex flex-col w-full h-full">
 			<NavBar />
 			<InputFields data={currentData} onDataChange={onDataChange} />
-			<MapDisplay location={currentData.location} onDataChange={onDataChange}/>
 			<InputFieldsButton saveData={saveData} />
 		</div>
 	);
