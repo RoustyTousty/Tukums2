@@ -1,12 +1,24 @@
-import { useEffect, useState } from "react";
-import { Order } from "@/types";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
 type Props = {
-    location: String | undefined;
+    location: String | null;
 };
 
 export default function MapDisplay({ location }: Props) {
+
+    if (!location) {
+        return <div>No Map location found!</div>;
+    }
+
+    function generateGoogleApiUrl(location: String) {
+        let newStr = "https://www.google.com/maps/embed/v1/place?key=AIzaSyC9FqoD2L29DAi7v1_-ygWwTkF70FLDjso&q="
+        for (let index = 0; index < location.length; index++) {
+            if (location[index] == " ") {
+                newStr += "+"
+            }
+            newStr += location[index]
+        }
+        return newStr
+    }
+    const API_URL = generateGoogleApiUrl(location)
 
     return (
         <div className="flex justify-center w-full">
@@ -19,20 +31,15 @@ export default function MapDisplay({ location }: Props) {
                     <div className="top-0 left-0 bg-base-100 rounded-xl w-full h-full p-0.5">
                         <div className="bg-base-100 rounded-xl w-full h-full">
                             <iframe
-                            width="600"
-                            height="450"
-                            className="border:0"
+                            className="w-full h-full rounded-lg"
                             loading="lazy"
                             allowFullScreen
                             referrerPolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC9FqoD2L29DAi7v1_-ygWwTkF70FLDjso
-                                &q=Tukums+Raina+gimnazija">
+                            src={API_URL}>
                             </iframe>
                         </div>
                     </div>
                 </div>
-
-                <p>Open in Google</p>
             </label>
         </div>
     );

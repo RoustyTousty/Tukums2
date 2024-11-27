@@ -11,7 +11,7 @@ export default function loadingPage() {
           <div className="bg-accent h-[25%]"></div>
         </div>
 
-        <div className="relative flex justify-center mt-[10%]">
+        <div className="relative flex justify-center mt-[20%]">
           <Image src={"/tukums-2-logo.png"} width={250} height={250} alt={"Logo"} />
         </div>
       </div>
