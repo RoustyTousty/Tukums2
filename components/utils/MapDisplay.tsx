@@ -23,13 +23,13 @@ export default function MapDisplay({ location }: Props) {
     return (
         <div className="flex justify-center w-full">
             <label className="flex flex-col justify-center w-full">
-                <div className="label justify-center">
-                    <span className="label-text text-sm text-neutral font-bold">{location}</span>
+                <div className="label">
+                    <span className="label-text text-sm text-neutral">{location}</span>
                 </div>
 
-                <div className="relative w-full" style={{ paddingBottom: "20%" }}>
-                    <div className="top-0 left-0 bg-base-100 rounded-xl w-full h-full p-0.5">
-                        <div className="bg-base-100 rounded-xl w-full h-full">
+                <div className="relative w-full">
+                    <div className="top-0 left-0 bg-base-100 rounded-xl w-full h-full">
+                        <div className="rounded-xl w-full h-full">
                             <iframe
                             className="w-full h-full rounded-lg"
                             loading="lazy"

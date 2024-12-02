@@ -9,4 +9,5 @@ export interface Order {
     price: number | null;
     paymentType: string | null;
     location: string | null;
+    status: boolean | null;
 }

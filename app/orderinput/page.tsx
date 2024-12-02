@@ -24,6 +24,7 @@ export default function Page() {
 		price: undefined,
 		paymentType: undefined,
 		location: undefined,
+		status: false,
 	});
 
 	function onDataChange(key: keyof typeof currentData, value: string | number) {
