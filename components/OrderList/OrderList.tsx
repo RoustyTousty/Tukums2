@@ -68,24 +68,31 @@ export default function OrderList() {
 
 	return (
 		<div className="bg-base-300 h-full flex flex-col p-[10%]">
-		<div className="flex justify-between mb-5">
-			<input
-				type="text"
-				placeholder="Search orders..."
-				className="input bg-base-100 w-full max-w-xs"
-				value={searchTerm}
-				onChange={handleSearch}
-			/>
-			<select
-				className="select bg-base-100 w-full max-w-xs"
-				value={selectedFilter}
-				onChange={handleFilterChange}
-			>
-			<option value="all">All</option>
-			<option value="purchaseType">Purchase Type</option>
-			<option value="paymentType">Payment Type</option>
-			<option value="status">Status</option>
-			</select>
+		<div className="flex justify-between mb-5 gap-3">
+			<div className="w-full max-w-xs">
+				<p>Meklēt</p>
+				<input
+					type="text"
+					placeholder="Search orders..."
+					className="input bg-base-100 w-full max-w-xs"
+					value={searchTerm}
+					onChange={handleSearch}
+				/>
+			</div>
+
+			<div className="w-full max-w-xs">
+				<p>Filtrs</p>
+				<select
+					className="select bg-base-100 w-full max-w-xs"
+					value={selectedFilter}
+					onChange={handleFilterChange}
+				>
+				<option value="all">Viss</option>
+				<option value="name">Vārds</option>
+				<option value="surname">Uzvārds</option>
+				<option value="status">Status</option>
+				</select>
+			</div>
 		</div>
 
 		{filteredOrders.length === 0 ? (
