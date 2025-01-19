@@ -1,6 +1,5 @@
 "use client";
 import InputFields from "../../components/OrderInput/InputFields";
-import MapDisplay from "@/components/utils/MapDisplay";
 import NavBar from "@/components/NavBar";
 import InputFieldsButton from "@/components/OrderInput/InputFieldsButtons";
 
