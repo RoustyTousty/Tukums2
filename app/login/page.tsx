@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_PROJECT_URL!,
-  process.env.NEXT_PUBLIC_ANON_KEY!
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
 );
 
 export default function LoginPage() {
@@ -15,26 +15,13 @@ export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = async () => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  
     if (error) {
       setError("Login failed. Please check your credentials.");
       return;
     }
-
-    // Check if the user is allowed
-    const { data, error: accessError } = await supabase
-      .from("AllowedUsers")
-      .select("*")
-      .eq("email", email)
-      .single();
-
-    if (accessError || !data) {
-      setError("You do not have access to this application.");
-      await supabase.auth.signOut();
-      return;
-    }
-    
+  
     router.push("/orderlist");
   };
 

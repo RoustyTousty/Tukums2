@@ -10,8 +10,8 @@ export default async function page({params}: {params: Params}) {
     const {id} = await params;
 
     const supabase = await createClient(
-        process.env.NEXT_PUBLIC_PROJECT_URL!,
-        process.env.NEXT_PUBLIC_ANON_KEY!
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     );
 
     const {data, error} = await supabase.from("Orders").select().eq("id", id).single();
