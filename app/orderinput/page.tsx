@@ -43,6 +43,7 @@ export default function Page() {
 			console.error("Error saving data:", error);
 		} else {
 			console.log("Data saved successfully:", data);
+			window.location.href = "/orderlist"
 		}
 	}
 
